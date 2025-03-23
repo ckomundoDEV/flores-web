@@ -61,22 +61,26 @@ export const estilosAnimacion = `
   }
   .message {
     position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    font-size: 1.7rem;
-    padding: 1.2rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
     margin: 0 auto;
-    max-width: 80%;
-    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 1rem;
     white-space: pre-line;
     z-index: 50;
-    background-color: rgba(255, 249, 219, 0.04);
+    background-color: rgba(255, 249, 219, 0.07);
     box-shadow: 0 8px 32px rgba(251, 191, 36, 0.2);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(251, 191, 36, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .mensaje-letra {
     display: inline-block;
@@ -103,5 +107,31 @@ export const estilosAnimacion = `
     margin: 0 5px;
     color: #ef4444;
     animation: heart-beat 1.5s ease-in-out infinite;
+  }
+  
+  /* Estilos responsive */
+  @media (max-width: 768px) {
+    .message {
+      font-size: 1rem;
+      padding: 0.7rem 1rem;
+      bottom: 4rem;
+      width: 92%;
+      max-width: 500px;
+    }
+    
+    .heart {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .message {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.8rem;
+      bottom: 3rem;
+      width: 94%;
+      max-width: 400px;
+    }
   }
 `; 

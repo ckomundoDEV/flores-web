@@ -1,4 +1,4 @@
- @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 *,
@@ -15,7 +15,7 @@
 
 body {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
   background-color: var(--dark-color);
@@ -43,6 +43,7 @@ body {
 .flowers {
   position: relative;
   transform: scale(0.9);
+  margin: 0 auto;
 }
 
 .flower {
@@ -60,18 +61,21 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 800;
-  height: 60px;
-  line-height: 1;
-  padding: 10px;
+  height: auto;
+  line-height: 1.2;
+  padding: 10px 15px;
   position: absolute;
-  opacity: 0; /* El elemento empieza invisible */
+  opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* El elemento aparecerá después de 60 segundos */
+  animation-delay: 2s;
+  max-width: 100%;
+  text-align: center;
+  word-break: break-word;
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; /* El elemento se vuelve visible */
+    opacity: 1;
   }
 }
 
@@ -1373,4 +1377,49 @@ body {
 .container * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .flowers {
+    transform: scale(0.7);
+  }
+  
+  .flower--2 {
+    left: 45% !important;
+  }
+  
+  .flower--3 {
+    left: 55% !important;
+  }
+  
+  .message {
+    font-size: 24px;
+    padding: 8px 12px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flowers {
+    transform: scale(0.5);
+  }
+  
+  .flower--1 {
+    left: 50%;
+  }
+  
+  .flower--2 {
+    left: 40% !important;
+  }
+  
+  .flower--3 {
+    left: 60% !important;
+  }
+  
+  .message {
+    font-size: 18px;
+    padding: 6px 10px;
+    bottom: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */ 

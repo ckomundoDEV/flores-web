@@ -9,30 +9,67 @@ interface FlowersAnimationProps {
 
 const FlowersAnimation: React.FC<FlowersAnimationProps> = ({ message, hearts }) => {
   return (
-    <>
+    <div className="flex items-center justify-center min-h-screen w-full overflow-hidden">
       <div className="night"></div>
-      <div className="flowers">
+      <div className="flowers" style={{ 
+        position: 'absolute', 
+        left: '50%', 
+        transform: 'translateX(-50%)',
+        bottom: '0'
+      }}>
         <Hearts hearts={hearts} />
         
         {/* Flores principales */}
-        {[1, 2, 3].map((flowerNum) => (
-          <div key={flowerNum} className={`flower flower--${flowerNum}`}>
-            <div className={`flower__leafs flower__leafs--${flowerNum}`}>
-              {[1, 2, 3, 4].map((leaf) => (
-                <div key={leaf} className={`flower__leaf flower__leaf--${leaf}`}></div>
-              ))}
-              <div className="flower__white-circle"></div>
-              {Array.from({length: 8}).map((_, i) => (
-                <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
-              ))}
-            </div>
-            <div className="flower__line">
-              {Array.from({length: flowerNum === 1 ? 6 : 4}).map((_, i) => (
-                <div key={i} className={`flower__line__leaf flower__line__leaf--${i + 1}`}></div>
-              ))}
-            </div>
+        <div className="flower flower--1" style={{ left: '50%' }}>
+          <div className="flower__leafs flower__leafs--1">
+            {[1, 2, 3, 4].map((leaf) => (
+              <div key={leaf} className={`flower__leaf flower__leaf--${leaf}`}></div>
+            ))}
+            <div className="flower__white-circle"></div>
+            {Array.from({length: 8}).map((_, i) => (
+              <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
+            ))}
           </div>
-        ))}
+          <div className="flower__line">
+            {Array.from({length: 6}).map((_, i) => (
+              <div key={i} className={`flower__line__leaf flower__line__leaf--${i + 1}`}></div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="flower flower--2" style={{ left: '65%' }}>
+          <div className="flower__leafs flower__leafs--2">
+            {[1, 2, 3, 4].map((leaf) => (
+              <div key={leaf} className={`flower__leaf flower__leaf--${leaf}`}></div>
+            ))}
+            <div className="flower__white-circle"></div>
+            {Array.from({length: 8}).map((_, i) => (
+              <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
+            ))}
+          </div>
+          <div className="flower__line">
+            {Array.from({length: 4}).map((_, i) => (
+              <div key={i} className={`flower__line__leaf flower__line__leaf--${i + 1}`}></div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="flower flower--3" style={{ left: '35%' }}>
+          <div className="flower__leafs flower__leafs--3">
+            {[1, 2, 3, 4].map((leaf) => (
+              <div key={leaf} className={`flower__leaf flower__leaf--${leaf}`}></div>
+            ))}
+            <div className="flower__white-circle"></div>
+            {Array.from({length: 8}).map((_, i) => (
+              <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
+            ))}
+          </div>
+          <div className="flower__line">
+            {Array.from({length: 4}).map((_, i) => (
+              <div key={i} className={`flower__line__leaf flower__line__leaf--${i + 1}`}></div>
+            ))}
+          </div>
+        </div>
 
         {/* Ramas adicionales */}
         <div className="grow-ans" style={{ "--d": "1.2s" } as React.CSSProperties}>
@@ -78,7 +115,7 @@ const FlowersAnimation: React.FC<FlowersAnimationProps> = ({ message, hearts }) 
           {message.split('').map((char, index) => (
             <span 
               key={index}
-              className="mensaje-letra animate-pulse-slow"
+              className="mensaje-letra animate-pulse-slow text-xs sm:text-sm md:text-base lg:text-lg"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 opacity: char === ' ' ? 0.8 : 1,
@@ -91,7 +128,7 @@ const FlowersAnimation: React.FC<FlowersAnimationProps> = ({ message, hearts }) 
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
