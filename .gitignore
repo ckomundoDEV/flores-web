@@ -35,11 +35,6 @@ yarn-error.log*
 # Source maps
 *.map
 
-# Source maps
-*.map
-
-# Source maps
-*.map
 
 node_modules
 node_modules

@@ -45,7 +45,7 @@ const FlowersController: React.FC<FlowersProps> = ({
         <FlowersButton 
           onButtonClick={iniciarAnimacion} 
           hearts={heartsBotones}
-          title="Un Regalito Cx"
+          title="Holi mi amor"
           message={message.split('\n')[0]}
         />
       ) : (
